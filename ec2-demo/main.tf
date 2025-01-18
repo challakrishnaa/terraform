@@ -12,10 +12,10 @@ resource "aws_instance" "demo-server" {
     }
 }
 resource "aws_vpc" "my-vpc" {
-    cidr_block = "10.10.0.0/16"
+    cidr_block = "10.10.0.0/16" # This is the cidr_block of the VPC
 
     tags = {
-        Name = "my-vpc"
+        Name = "my-vpc" # This is the name of the VPC
     }
 
 }
