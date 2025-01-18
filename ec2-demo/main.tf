@@ -11,3 +11,11 @@ resource "aws_instance" "demo-server" {
         Name = "demo-server"
     }
 }
+resource "aws_vpc" "my-vpc" {
+    cidr_block = "10.10.0.0/16"
+
+    tags = {
+        Name = "my-vpc"
+    }
+
+}
