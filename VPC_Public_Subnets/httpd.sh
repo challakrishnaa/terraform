@@ -1,6 +1,6 @@
 #!/bin/bas
-sudo yum update -y 
-sudo yum install -y 
+sudo yum update -y # This command is used to update the internal repository with yum repository
+sudo yum install httpd -y 
 sudo systemctl httpd start 
 sudo systemctl httpd enable 
 sudo mkdir -p /var/www/html
