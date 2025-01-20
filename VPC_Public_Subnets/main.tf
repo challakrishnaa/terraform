@@ -82,6 +82,7 @@ resource "aws_instance" "server-1" {
     instance_type = "t3.micro"
     availability_zone = "eu-north-1a"
     key_name = "devops"
+    user_data = "httpd.sh"
     security_groups = [aws_security_group.my-sg.id]
     tags = {
         Name = "server-1"
@@ -93,6 +94,7 @@ resource "aws_instance" "server-2" {
     instance_type = "t3.micro"
     availability_zone = "eu-north-1b"
     key_name = "devops"
+    user_data = "./httpd/httpd.sh"
     security_groups = [aws_security_group.my-sg.id]
     tags = {
         Name = "server-2"
