@@ -80,10 +80,10 @@ resource "aws_security_group" "my-sg" {
 resource "aws_instance" "server-1" {
     ami = "ami-02df5cb5ad97983ba"
     instance_type = "t3.micro"
-    availability_zone = "eu-north-1a"
+    subnet_id = aws_subnet.public_subnet_1.id
     key_name = "devops"
     user_data = "httpd.sh"
-    security_groups = [aws_security_group.my-sg.id]
+    vpc_security_group_ids = [aws_security_group.my-sg.id]
     tags = {
         Name = "server-1"
     }
@@ -92,10 +92,10 @@ resource "aws_instance" "server-1" {
 resource "aws_instance" "server-2" {
     ami = "ami-02df5cb5ad97983ba"
     instance_type = "t3.micro"
-    availability_zone = "eu-north-1b"
+    subnet_id = aws_subnet.public_subnet_2.id
     key_name = "devops"
     user_data = "./httpd/httpd.sh"
-    security_groups = [aws_security_group.my-sg.id]
+    vpc_security_group_ids = [aws_security_group.my-sg.id]
     tags = {
         Name = "server-2"
     }
